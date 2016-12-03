@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template,request
+from get_user_alerts import get_user_alerts
 
 @app.route('/')
 @app.route('/index')
@@ -16,3 +17,7 @@ def post_alert():
     content = request.get_json(silent=True)
     print content
     return '200 OK'
+
+@app.route('/api/get-user-alerts')
+def alerts():
+	return get_user_alerts()
