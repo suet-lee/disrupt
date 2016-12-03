@@ -1,6 +1,6 @@
 from app import app
-from flask import render_template, jsonify
-from get_user_alerts import get_user_alerts
+from flask import render_template,request,jsonify
+from get_user_alerts import get_user_alerts,save_alert
 from create_alert import create_alert
 
 @app.route('/')
@@ -11,7 +11,14 @@ def index():
 @app.route('/text')
 @app.route('/text/<message>')
 def text(message='hi'):
-	return message
+    return message
+
+@app.route('/api/post-alert', methods=['POST'])
+def post_alert():
+    content = request.get_json()
+    print content
+    save_alert(content)
+    return ''
 
 @app.route('/api/get-user-alerts/<service>/<area>')
 def alerts(service, area):
