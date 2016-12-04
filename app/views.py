@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template,request,jsonify
-from get_user_alerts import get_user_alerts,save_alert,save_service,find_address
+from get_user_alerts import get_user_alerts,save_alert,save_service,find_address,search_services
 from create_alert import create_alert
 
 @app.route('/')
@@ -10,9 +10,11 @@ def index():
 
 @app.route('/search', methods=['POST'])
 def post_results():
-	 data = request.form.get('location')
-	 print data
-	 return data
+    print request.form
+    loc = request.form.get('location')
+    serv = request.form.get('service')
+    data = search_services(loc, serv)
+    return jsonify(data)
 
 
 @app.route('/api/post-alert', methods=['POST'])
