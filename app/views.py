@@ -11,7 +11,8 @@ def index():
 @app.route('/text')
 @app.route('/text/<message>')
 def text(message='hi'):
-    return message
+	return render_template('index.html')
+	return message
 
 @app.route('/api/post-alert', methods=['POST'])
 def post_alert():
