@@ -12,8 +12,11 @@
 <link href="https://fonts.googleapis.com/css?family=Raleway:400,800,900" rel="stylesheet">
    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ url_for('static', filename='css/mystyle.css') }}" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js"></script>
-<script src="{{ url_for('static', filename='js/global.js') }}"></script>
+  <link href="{{ url_for('static', filename='css/global.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/global.js') }}"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,7 +38,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-        <a class="navbar-brand" href="#">wima</a>
+        <!-- <a class="navbar-brand" href="#">wima</a> -->
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
@@ -54,22 +57,27 @@
       <center>
         <img src="../static/images/logo.png" alt="" style="">
 
-
-      <form>
+		<p class="tagline"><span>w</span>hat's <span>i</span>n <span>m</span>y <span>a</span>rea</p>
+      <form action="/search" method="post">
         <div class="form-group">
-          <input type="text" class="form-control" id="InputLocation" aria-describedby="emailHelp" placeholder="Location">
+          <input type="text" name="service" class="form-control" id="InputLocation" placeholder="find a service . . .">
+          <input type="text" name="location" class="form-control" id="InputLocation" placeholder=". . . in your area">
         </div>
+		<button><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
         <center>
-        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Submit</a>
+        <!-- <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Submit</a> -->
         </p>
 
       </form>
     </div>
     </div>
   </div>
+  <div id="blue-line"></div>
   <footer class="footer navbar-fixed-bottom">
     <div class="container wite">
-      <p class="navbar-text pull-left">Place sticky footer content here.</p>
+      <a class="navbar-text pull-left">terms</a>
+      <a class="navbar-text pull-left">about</a>
+      <a class="navbar-text pull-left">contact</a>
     </div>
   </footer>
   <!-- /container -->
