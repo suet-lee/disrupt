@@ -24,7 +24,7 @@ footer a:
 .search-result p:first-child	{ color: #116a2e; font-size: 17px; }
 .search-result p:nth-child(2)	{ color: #159be1; }
 .drop 			{ float: left; padding-top: 5px; width: 29px; }
-.right-side 	{ float: left; margin-left: 20px; }
+.right-side 	{ float: left; margin-left: 20px; max-width: 200px; }
 
 #search-stuff 	{ width: 505px; margin: 40px auto; }
 .search-result:hover .drop 	{  }

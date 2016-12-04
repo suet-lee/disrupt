@@ -17,7 +17,7 @@ def save_alert(content):
 	db = MySQLdb.connect(host=app.DB_HOST, user=app.DB_USER, passwd=app.DB_PASSWD, db=app.DB_NAME, cursorclass=MySQLdb.cursors.DictCursor)
 	with closing(db.cursor()) as cursor:
             cursor.execute(
-                    "INSERT INTO user_alerts(country_code, phone_number, area, service) VALUES (%s,%s,%s,%s)", 
+                    "INSERT INTO user_alerts(country_code, phone_number, area, service) VALUES (%s,%s,%s,%s)",
                     (content['country_code'], content['phone_number'], content['area'], content['service']))
             db.commit()
 
@@ -34,7 +34,7 @@ def save_service(content):
                         "address_line_1, address_line_2, postcode, website, "
                         "area, country, phone_number, town_city, service, "
                         "latitude, longitude) "
-                        " VALUES (%s,%s,%s,   %s,%s,%s,%s,'none',%s,%s,%s,%s,%s,%s)", 
+                        " VALUES (%s,%s,%s,   %s,%s,%s,%s,'none',%s,%s,%s,%s,%s,%s)",
                 (content['name'], content['description'], content['email'],
                     content['address_line_1'], content['address_line_2'], content['postcode'], content['website'],
                     content['country'], content['phone_number'], content['town_city'], content['service'],
@@ -55,9 +55,8 @@ def search_services(locstring, serv):
         cursor.execute("SELECT * FROM services WHERE service = %s", (serv,))
         data = [ row for row in cursor.fetchall() ]
     for item in data:
-        item['distance'] = vincenty(p, (item['longitude'], item['latitude'])).miles
+		dist = vincenty(p, (item['longitude'], item['latitude'])).miles
+		item['distance'] = "%.1f" % dist
     data.sort(key=lambda x: x['distance'])
     del data[5:]
     return data
-
-
