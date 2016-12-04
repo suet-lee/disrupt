@@ -34,12 +34,14 @@ with closing(db.cursor()) as cursor:
 					town_city VARCHAR(255),\
 					country VARCHAR(255),\
 					postcode VARCHAR(255),\
+					latitude VARCHAR(255),\
+					longitude VARCHAR(255),\
 					active INT(1) DEFAULT 1,\
 					created TIMESTAMP\
 					)")
 db.commit()
 
-services = [{"area": "west kensington", "service": "dentist", "name": "Family Dentists Ltd", "description": "Family dentists - call to book now", "email": "we_like_teeth@shiny.com", "phone_number": "+448877766655", "website": "www.weloveteeth.com", "address_line_1": "12 Long Road", "address_line_2": "", "town_city": "London", "country": "UK", "postcode": "SE11ES"}]
+services = [{"area": "west kensington", "service": "dentist", "name": "Family Dentists Ltd", "description": "Family dentists - call to book now", "email": "we_like_teeth@shiny.com", "phone_number": "+448877766655", "website": "www.weloveteeth.com", "address_line_1": "12 Long Road", "address_line_2": "", "town_city": "London", "country": "UK", "postcode": "SE11ES", "latitude": "", "longitude": ""}]
 			# {"area": "west kensington", "service": "florists", "name": "Flower Power", "description": "Selling fresh flowers 247", "email": "pink@daisies.com", "phone_number": "+441122233344", "website": "www.flowerpower.com" "address_line_1": "14 Long Road", "address_line_2": "", "town_city": "London", "country": "UK", "postcode": "SE22ES"}]
 
 for service in services:
