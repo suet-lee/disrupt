@@ -6,7 +6,15 @@ $('#alert-box i').click(function(){
 	area = $('#area').val();
 	service = $('#service').val();
 	var data = {"country_code": country_code, "phone_number": phone_number, "area": area, "service": service};
-	$.post({"url": '/api/post-alert', "data": JSON.stringify(data), "contentType": "application/json"});
+	$.post({"url": '/api/post-alert', "data": JSON.stringify(data), "contentType": "application/json"},
+	function(){
+		$('#popup').fadeIn(200);
+		$('#popup').css('display', 'flex');
+	});
+});
+
+$('#popup, .navbar, footer').click(function(){
+	$('#popup').hide();
 });
 
 });

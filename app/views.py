@@ -29,7 +29,7 @@ def sign_up():
 @app.route('/api/post-alert', methods=['POST'])
 def post_alert():
 	content = request.get_json()
-	send_sms(content["country_code"], content["phone_number"], content["service"], content["area"], "some_name")
+	send_sms(content["country_code"], content["phone_number"], content["service"], content["area"])
 	save_alert(content)
 	return ''
 

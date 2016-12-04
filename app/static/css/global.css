@@ -36,3 +36,7 @@ select#ccode { border: 3px solid #159be1; border-radius: 5px; padding: 5px; }
 #alert-box * { float: left; margin-right: 10px; }
 #alert-box i { margin-top: 3px; font-size: 26px; color: #116a2e; }
 #alert-box i:hover { color: #159be1; cursor: pointer; }
+
+#popup 	{ display: none; position: fixed; background-color: rgba(0,0,0,0.5); z-index: 4; left: 0; bottom: 0; top: 0; right: 0; width: 100%; height: 100%; }
+#popup div.inner 	{ width: 250px; height: 100px; margin: auto; display: flex; background-color: #159be1; border-radius: 20px; }
+#popup div.inner * 	{ color: white; float: left; margin: auto; font-size: 20px; font-weight: bold; }
