@@ -8,6 +8,12 @@ from create_alert import create_alert
 def index():
 	return render_template('index.html')
 
+@app.route('/search', methods=['POST'])
+def get_results():
+	 data = request.data
+	 return data
+
+
 @app.route('/api/post-alert', methods=['POST'])
 def post_alert():
     content = request.get_json()
