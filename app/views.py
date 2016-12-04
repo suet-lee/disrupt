@@ -9,8 +9,9 @@ def index():
 	return render_template('index.html')
 
 @app.route('/search', methods=['POST'])
-def get_results():
-	 data = request.data
+def post_results():
+	 data = request.form.get('location')
+	 print data
 	 return data
 
 

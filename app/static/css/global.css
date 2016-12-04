@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu')
+
+* 	{ font-family: 'Ubuntu'; }
+
+.jumbotron .tagline	{ color: #159be1; letter-spacing: 1px; margin-top: -20px; font-weight: bold; }
+
+#blue-line			{ background-color: #159be1; width: 100%; height: 10px; position: absolute; bottom: 60px; }
+.jumbotron button	{ background-color: rgba(0,0,0,0); border: none; padding: 0; position: absolute; margin-left: 135px; margin-top: -58px; font-size: 200%; color: #116A2E; }
+.jumbotron button:hover 	{ color: #159be1; cursor: pointer; }
+.jumbotron.zaki 	{ position: absolute; top: 50%; left: 50%; margin-left: -171px; margin-top: 35px;}
+.jumbotron p 		{ margin-bottom: 20px; }
+footer a 			{ color: white; padding: 5px 20px; font-weight: bold; }
+footer a:hover 		{ color: #159be1; cursor: pointer; text-decoration: none; }
+footer a:
+.form-control:hover { border-color: #159be1; cursor: pointer; }
