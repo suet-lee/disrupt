@@ -52,7 +52,7 @@ def search_services(locstring, serv):
     p = (loc.longitude, loc.latitude)
     db = MySQLdb.connect(host=app.DB_HOST, user=app.DB_USER, passwd=app.DB_PASSWD, db=app.DB_NAME, cursorclass=MySQLdb.cursors.DictCursor)
     with closing(db.cursor()) as cursor:
-        cursor.execute("SELECT * FROM services")
+        cursor.execute("SELECT * FROM services WHERE service = %s", (serv,))
         data = [ row for row in cursor.fetchall() ]
     for item in data:
         item['distance'] = vincenty(p, (item['longitude'], item['latitude'])).miles
