@@ -1,0 +1,13 @@
+{
+    "service"        : "events",
+    "name"           : "Hackathon",
+    "description"    : "hack",
+    "email"          : "hack@techcrunch.com",
+    "website"        : "https://www.universe.com",
+    "phone_number"   : "+44 20 8221 4900",
+    "address_line_1" : "Queen Elizabeth Olympic Park",
+    "address_line_2" : "",
+    "town_city"      : "London",
+    "country"        : "UK",
+    "postcode"       : "E20 3HB"
+}
