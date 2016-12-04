@@ -31,11 +31,13 @@ def save_service(content):
         cursor.execute(
                 "INSERT INTO services(name, description, email, "
                         "address_line_1, address_line_2, postcode, website, "
-                        "area, country, phone_number, town_city, service) "
-                        " VALUES (%s,%s,%s,   %s,%s,%s,%s,'none',%s,%s,%s,%s)", 
+                        "area, country, phone_number, town_city, service, "
+                        "latitude, longitude) "
+                        " VALUES (%s,%s,%s,   %s,%s,%s,%s,'none',%s,%s,%s,%s,%s,%s)", 
                 (content['name'], content['description'], content['email'],
                     content['address_line_1'], content['address_line_2'], content['postcode'], content['website'],
-                    content['country'], content['phone_number'], content['town_city'], content['service']))
+                    content['country'], content['phone_number'], content['town_city'], content['service'],
+                    loc.latitude, loc.longitude))
         db.commit()
 
 def find_address(coords):
