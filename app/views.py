@@ -6,13 +6,7 @@ from create_alert import create_alert
 @app.route('/')
 @app.route('/index')
 def index():
-    return "Hello, World!"
-
-@app.route('/text')
-@app.route('/text/<message>')
-def text(message='hi'):
 	return render_template('index.html')
-	return message
 
 @app.route('/api/post-alert', methods=['POST'])
 def post_alert():
@@ -32,6 +26,6 @@ def post_service():
 def alerts(service, area):
 	return jsonify(get_user_alerts(service, area))
 
-@app.route('/create-alert/<service>/<area>/<name>')
-def route_create_alert(service, area, name):
-	return create_alert(service, area, name)
+# @app.route('/create-alert/<service>/<area>/<name>')
+# def route_create_alert(service, area, name):
+# 	return create_alert(service, area, name)
