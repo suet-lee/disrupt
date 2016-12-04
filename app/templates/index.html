@@ -15,6 +15,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/core.js"></script>
 <script src="{{ url_for('static', filename='js/global.js') }}"></script>
 
+<script>
+if (navigator.geolocation) {
+    console.log("getting position");
+    navigator.geolocation.getCurrentPosition(showPosition);
+}
+function showPosition(position) {
+    var x = document.getElementById("InputLocation");
+    console.log("setting position");
+//    x.value = position.coords.latitude + "," + position.coords.longitude; 
+    var coords = position.coords.latitude + "," + position.coords.longitude; 
+    $.ajax({ 
+        url: '/api/get-address/' + coords, 
+        success : function(result){ x.value = result ; } });
+}
+</script>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>

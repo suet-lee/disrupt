@@ -22,9 +22,7 @@ def save_alert(content):
 
 def save_service(content):
     print content
-    address_string = content['address_line_1']+ content['address_line_2']+ content['postcode']+ content['town_city']+ content['country']
     address_string = '{address_line_1}, {address_line_2}, {postcode}, {town_city}, {country}'.format(**content)
-    print address_string
     geolocator = ArcGIS()
     loc = geolocator.geocode(address_string)
     print loc.raw
@@ -39,3 +37,8 @@ def save_service(content):
                     content['address_line_1'], content['address_line_2'], content['postcode'], content['website'],
                     content['country'], content['phone_number'], content['town_city'], content['service']))
         db.commit()
+
+def find_address(coords):
+    geolocator = ArcGIS()
+    loc = geolocator.reverse(coords)
+    return loc.raw['Match_addr']
