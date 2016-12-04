@@ -8,11 +8,11 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>wima</title>
   <!-- Bootstrap -->
-<link href="https://fonts.googleapis.com/css?family=Raleway:400,800,900" rel="stylesheet">
-   <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-  <link href="{{ url_for('static', filename='css/mystyle.css') }}" rel="stylesheet">
-
-
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,800,900" rel="stylesheet">
+  <link href="{{ url_for('static', filename='/static/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='/static/css/mystyle.css') }}" rel="stylesheet">
+  <!--<link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/mystyle.css" rel="stylesheet">-->
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -37,58 +37,39 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="../navbar/">Default</a></li>
-          <li><a href="/index.html">Admin</a></li>
+          <li><a href="/index.html">Got A Service?</a></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
     </div>
   </nav>
   <div class="container">
+    <div class="col-md-12 column">
     <!-- Main component for a primary marketing message or call to action -->
     <div class="jumbotron zaki">
-              <center><h1>wima</h1></center>
-<form>
+      <center>
+        <img src="../static/images/logo.png" alt="" style="">
 
-
-      <div class="form-group">
-        <input type="text" class="form-control" id="InputLocation" aria-describedby="emailHelp" placeholder="Location">
-      </div>
-
-
-        <div class="input-group">
-      <input type="text" placeholder="Search" class="form-control" aria-label="...">
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" placeholder="Search" aria-haspopup="true" aria-expanded="false">Catagory <span class="caret"></span></button>
-        <ul class="dropdown-menu dropdown-menu-right">
-          <li><a href="#">Education</a></li>
-          <li><a href="#">law</a></li>
-          <li><a href="#">Emmergency</a></li>
-
-        </ul>
-      </div><!-- /btn-group -->
-    </div><!-- /input-group -->
-
-<br>
-
-      <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Submit</a>
-      </p>
-</form>
+   
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" id="InputLocation" aria-describedby="emailHelp" placeholder="Location">
+        </div>
+        <center>
+        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Submit</a>
+        </p>
+        
+      </form>
+    </div>
     </div>
   </div>
-
-
- <footer class="footer navbar-fixed-bottom">
-      <div class="container">
-        <p class="navbar-text pull-left">Place sticky footer content here.</p>
-      </div>
-    </footer>
-
+  <footer class="footer navbar-fixed-bottom">
+    <div class="container wite">
+      <p class="navbar-text pull-left">Place sticky footer content here.</p>
+    </div>
+  </footer>
   <!-- /container -->
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
