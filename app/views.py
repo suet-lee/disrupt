@@ -1,7 +1,8 @@
 from app import app
 from flask import render_template,request,jsonify
 from get_user_alerts import get_user_alerts,save_alert,save_service,find_address,search_services
-from create_alert import create_alert
+from create_alert import create_alert, send_sms
+import json
 
 @app.route('/')
 @app.route('/index')
@@ -10,16 +11,16 @@ def index():
 
 @app.route('/search', methods=['POST'])
 def post_results():
-    print request.form
-    loc = request.form.get('location')
-    serv = request.form.get('service')
-    data = search_services(loc, serv)
-    return jsonify(data)
+	loc = request.form.get('location')
+	serv = request.form.get('service')
+	data = search_services(loc, serv)
+	return render_template('searchpage.html', data={"results": data, "area": str(loc), "service": str(serv)})
+	# return jsonify(data)
 
-@app.route('/search2')
-def post_results2():
-	data = {"results": [{"name":"Family dentists", "distance": "0.1 miles"}, {"name":"Apple School", "distance": "0.5 miles"}], "area": "shoreditch", "service": "dentist"}
-	return render_template('searchpage.html', data=data)
+# @app.route('/search2')
+# def post_results2():
+# 	data = {"results": [{"name":"Family dentists", "distance": "0.1 miles"}, {"name":"Apple School", "distance": "0.5 miles"}], "area": "shoreditch", "service": "dentist"}
+# 	return render_template('searchpage.html', data=data)
 
 @app.route('/sign-up')
 def sign_up():
@@ -27,10 +28,10 @@ def sign_up():
 
 @app.route('/api/post-alert', methods=['POST'])
 def post_alert():
-    content = request.get_json()
-    print content
-    save_alert(content)
-    return ''
+	content = request.get_json()
+	send_sms(content["country_code"], content["phone_number"], content["service"], content["area"], "some_name")
+	save_alert(content)
+	return ''
 
 @app.route('/api/post-service', methods=['POST'])
 def post_service():

@@ -1,11 +1,12 @@
 $(document).ready(function(){
 
-$('#alert-box input[type="submit"]').click(function(){
-	ccode = $('#ccode').val();
-	number = $('#pnum').val();
+$('#alert-box i').click(function(){
+	country_code = $('#ccode').val();
+	phone_number = $('#pnum').val();
 	area = $('#area').val();
 	service = $('#service').val();
-		console.log(ccode+number+area+service);
+	var data = {"country_code": country_code, "phone_number": phone_number, "area": area, "service": service};
+	$.post({"url": '/api/post-alert', "data": JSON.stringify(data), "contentType": "application/json"});
 });
 
 });

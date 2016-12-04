@@ -51,15 +51,21 @@
   </nav>
   <div class="container">
 	  <div id="search-stuff">
-	  {% for x in data.results %}
-	  <div class="search-result">
-		  <img class="drop" src="{{ url_for('static', filename='images/drop.png') }}">
-		  <div class="right-side">
-		  	<p>{{ x.name }}</p>
-		  	<p>{{ x.distance }}</p>
-		</div>
-	  </div>
-	  {% endfor %}
+	  {% if data.results %}
+		  {% for x in data.results %}
+		  <div class="search-result">
+			  <img class="drop" src="{{ url_for('static', filename='images/drop.png') }}">
+			  <div class="right-side">
+			  	<p>{{ x.name }}</p>
+			  	<p>{{ x.distance }} miles</p>
+			</div>
+		  </div>
+		  {% endfor %}
+	  {% else %}
+		  <div class="search-result">
+			  <p id="error">No results found!</p>
+		  </div>
+	  {% endif %}
 	  <div id="alert-box">
 		  <select id="ccode" name="country_code">
 			  <option value="+44">+44</option>
@@ -67,7 +73,7 @@
 		  <input type="text" id="pnum" name="phone_number" placeholder="get alert for services ...">
 		  <input type="hidden" id="area" name="area" value="{{ data.area }}">
 		  <input type="hidden" id="service" name="service" value="{{ data.service }}">
-		  <input type="submit" value="go">
+		  <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
 	  </div>
   </div>
  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d39726.44511890733!2d-0.0590153164550781!3d51.51499885599855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1480799996156" width="1000" height="1000" frameborder="0" style="border:0" allowfullscreen></iframe> -->

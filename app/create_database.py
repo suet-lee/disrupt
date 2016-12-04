@@ -46,5 +46,5 @@ services = [{"area": "west kensington", "service": "dentist", "name": "Family De
 
 for service in services:
 	with closing(db.cursor()) as cursor:
-		cursor.execute("INSERT INTO services SET area = %s, service = %s, description = %s, email = %s, website = %s, phone_number = %s", [service['area'], service['service'], service['description'], service['email'], service['website'], service['phone_number']])
+		cursor.execute("INSERT INTO services SET area = %s, service = %s, name= %s, description = %s, email = %s, website = %s, phone_number = %s", [service['area'], service['service'], service['name'], service['description'], service['email'], service['website'], service['phone_number']])
 	db.commit()
