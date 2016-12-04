@@ -18,6 +18,26 @@
 	<script src="{{ url_for('static', filename='js/jquery-3.1.1.js') }}"></script>
 	<script src="{{ url_for('static', filename='js/global.js') }}"></script>
 
+<script>
+if (navigator.geolocation) {
+    console.log("getting position");
+    navigator.geolocation.getCurrentPosition(showPosition);
+}
+function showPosition(position) {
+    var x = document.getElementById("InputLocation");
+    console.log("getting address");
+//    x.value = position.coords.latitude + "," + position.coords.longitude; 
+    var coords = position.coords.latitude + "," + position.coords.longitude; 
+    $.ajax({ 
+        url: '/api/get-address/' + coords, 
+        success : function(result){
+            console.log("setting address"); 
+            x.value = result; 
+        } 
+    });
+    
+}
+</script>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -60,7 +80,7 @@
 		<p class="tagline"><span>w</span>hat's <span>i</span>n <span>m</span>y <span>a</span>rea</p>
       <form action="/search" method="post">
         <div class="form-group">
-          <input type="text" name="service" class="form-control" id="InputLocation" placeholder="find a service . . .">
+          <input type="text" name="service" class="form-control" id="InputService" placeholder="find a service . . .">
           <input type="text" name="location" class="form-control" id="InputLocation" placeholder=". . . in your area">
         </div>
 		<button><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>

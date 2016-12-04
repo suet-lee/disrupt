@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template,request,jsonify
-from get_user_alerts import get_user_alerts,save_alert,save_service
+from get_user_alerts import get_user_alerts,save_alert,save_service,find_address
 from create_alert import create_alert
 
 @app.route('/')
@@ -28,6 +28,10 @@ def post_service():
     print content
     save_service(content)
     return ''
+
+@app.route('/api/get-address/<coords>', methods=['GET'])
+def get_address(coords):
+    return find_address(coords)
 
 @app.route('/api/get-user-alerts/<service>/<area>')
 def alerts(service, area):
