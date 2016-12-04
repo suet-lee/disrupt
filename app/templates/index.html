@@ -64,7 +64,7 @@ function showPosition(position) {
         <ul class="nav navbar-nav">
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="/index.html">Got A Service?</a></li>
+          <li><a href="/sign-up">Got A Service to Offer?</a></li>
         </ul>
       </div>
       <!--/.nav-collapse -->
@@ -75,7 +75,7 @@ function showPosition(position) {
     <!-- Main component for a primary marketing message or call to action -->
     <div class="jumbotron zaki">
       <center>
-        <img src="../static/images/logo.png" alt="" style="">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" style="">
 
 		<p class="tagline"><span>w</span>hat's <span>i</span>n <span>m</span>y <span>a</span>rea</p>
       <form action="/search" method="post">
@@ -92,12 +92,13 @@ function showPosition(position) {
     </div>
     </div>
   </div>
+  <img id="houses" src="{{ url_for('static', filename='images/houses.png') }}">
   <div id="blue-line"></div>
   <footer class="footer navbar-fixed-bottom">
     <div class="container wite">
-      <a class="navbar-text pull-left">terms</a>
-      <a class="navbar-text pull-left">about</a>
-      <a class="navbar-text pull-left">contact</a>
+      <a class="navbar-text pull-left">Terms</a>
+      <a class="navbar-text pull-left">About</a>
+      <a class="navbar-text pull-left">Contact</a>
     </div>
   </footer>
   <!-- /container -->

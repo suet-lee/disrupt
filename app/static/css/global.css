@@ -3,13 +3,28 @@
 * 	{ font-family: 'Ubuntu'; }
 
 .jumbotron .tagline	{ color: #159be1; letter-spacing: 1px; margin-top: -20px; font-weight: bold; }
+#navbar a:hover 	{ color: #159be1; }
 
 #blue-line			{ background-color: #159be1; width: 100%; height: 10px; position: absolute; bottom: 60px; }
 .jumbotron button	{ background-color: rgba(0,0,0,0); border: none; padding: 0; position: absolute; margin-left: 135px; margin-top: -58px; font-size: 200%; color: #116A2E; }
 .jumbotron button:hover 	{ color: #159be1; cursor: pointer; }
-.jumbotron.zaki 	{ position: absolute; top: 50%; left: 50%; margin-left: -171px; margin-top: 35px;}
+.jumbotron.zaki 	{ position: absolute; top: 50%; left: 50%; margin-left: -196px; margin-top: 35px;}
 .jumbotron p 		{ margin-bottom: 20px; }
 footer a 			{ color: white; padding: 5px 20px; font-weight: bold; }
 footer a:hover 		{ color: #159be1; cursor: pointer; text-decoration: none; }
 footer a:
 .form-control:hover { border-color: #159be1; cursor: pointer; }
+#houses				{ position: absolute; right: 22px; bottom: 72px; width: 100px; }
+
+.navbar.search		{ height: 100px; }
+.navbar.search a.sign-up	{ padding-top: 59px; }
+
+.search-result 		{ float: left; margin-right: 2px; height: 90px; width: 250px; }
+.search-result p 	{ font-weight: bold; }
+.search-result p:first-child	{ color: #116a2e; font-size: 17px; }
+.search-result p:nth-child(2)	{ color: #159be1; }
+.drop 			{ float: left; padding-top: 5px; width: 29px; }
+.right-side 	{ float: left; margin-left: 20px; }
+
+#search-stuff 	{ width: 505px; margin: 40px auto; }
+.search-result:hover .drop 	{  }

@@ -1,9 +1,11 @@
 $(document).ready(function(){
 
-// $('.jumbotron i').click(function(){
-// 	location = $('.jumbotron input').val();
-// 	console.log(location);
-// });
-
+$('#alert-box input[type="submit"]').click(function(){
+	ccode = $('#ccode').val();
+	number = $('#pnum').val();
+	area = $('#area').val();
+	service = $('#service').val();
+		console.log(ccode+number+area+service);
+});
 
 });

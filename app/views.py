@@ -16,6 +16,14 @@ def post_results():
     data = search_services(loc, serv)
     return jsonify(data)
 
+@app.route('/search2')
+def post_results2():
+	data = {"results": [{"name":"Family dentists", "distance": "0.1 miles"}, {"name":"Apple School", "distance": "0.5 miles"}], "area": "shoreditch", "service": "dentist"}
+	return render_template('searchpage.html', data=data)
+
+@app.route('/sign-up')
+def sign_up():
+	 return render_template('form.html')
 
 @app.route('/api/post-alert', methods=['POST'])
 def post_alert():
