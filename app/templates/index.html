@@ -22,12 +22,17 @@ if (navigator.geolocation) {
 }
 function showPosition(position) {
     var x = document.getElementById("InputLocation");
-    console.log("setting position");
+    console.log("getting address");
 //    x.value = position.coords.latitude + "," + position.coords.longitude; 
     var coords = position.coords.latitude + "," + position.coords.longitude; 
     $.ajax({ 
         url: '/api/get-address/' + coords, 
-        success : function(result){ x.value = result ; } });
+        success : function(result){
+            console.log("setting address"); 
+            x.value = result; 
+        } 
+    });
+    
 }
 </script>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
